@@ -32,8 +32,8 @@ export default function MenuWrapper({ meals }: { meals: Meal[]}) {
 
   return (
     <>
-      <div className='menu-container flex ms-40'>
-        <div className='category m-10 w-3/12 min-w-80'>
+      <div className='menu-container flex mx-40'>
+        <div className='category m-10 min-w-36'>
           <h2 className='text-xl font-bold'>Menu</h2>
           <ul>
             <li className='mb-2'>1</li>

@@ -18,8 +18,8 @@ export function MenuCardSkeleton() {
 
 export function MenuCardsSkeleton() {
   return (
-    <div className='menu-container flex ms-40'>
-      <div className='category m-10 w-3/12 min-w-80'>
+    <div className='menu-container flex mx-40'>
+      <div className='category m-10 min-w-36'>
         <h2 className='text-xl font-bold'>Menu</h2>
         <ul>
           <li className='mb-2 h-6 m-auto rounded-md rounded-md bg-gray-200 text-sm font-medium'></li>
@@ -34,6 +34,11 @@ export function MenuCardsSkeleton() {
           </div>
           
           <div className="flex flex-wrap">
+            <MenuCardSkeleton />
+            <MenuCardSkeleton />
+            <MenuCardSkeleton />
+            <MenuCardSkeleton />
+            <MenuCardSkeleton />
             <MenuCardSkeleton />
             <MenuCardSkeleton />
             <MenuCardSkeleton />
