@@ -32,21 +32,29 @@ export default function MenuWrapper({ meals }: { meals: Meal[]}) {
 
   return (
     <>
-      <div className='menu-container grid grid-cols-6 gap-4'>
-        <div className='category col-span-1 m-10'>
+      <div className='menu-container flex ms-40'>
+        <div className='category m-10 w-3/12 min-w-80'>
           <h2 className='text-xl font-bold'>Menu</h2>
           <ul>
-            <li>1</li>
-            <li>2</li>
+            <li className='mb-2'>1</li>
+            <li className='mb-2'>2</li>
           </ul>
         </div>
 
-        <div className='grid grid-cols-2 col-span-5 grid-cols-2 md:grid md:col-span-5 md:grid-cols-3 m-10'>
-          <Suspense fallback={<MenuCardsSkeleton />}>
-            {meals?.meals?.map((meal, key) => (
-              <MenuCard menuData={meal} mealSelected={mealSelected} updateMealSelected={updateMealSelected} key={key}/>
-            ))}
-          </Suspense>
+        <div className='flex-auto m-10'>
+          <div>
+            <div className='w-full'>
+              <h1 className='text-lg fond-bold'>1</h1>
+            </div>
+            
+            <div className="flex flex-wrap">
+              <Suspense fallback={<MenuCardsSkeleton />}>
+                {meals?.meals?.map((meal, key) => (
+                  <MenuCard menuData={meal} mealSelected={mealSelected} updateMealSelected={updateMealSelected} key={key}/>
+                ))}
+              </Suspense>
+            </div>
+          </div>
         </div>
 
         <Cart mealOrders={mealSelected} />
