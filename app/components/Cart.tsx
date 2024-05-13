@@ -25,9 +25,11 @@ function Cart({mealOrders}: {mealOrders: Meal[]}) {
 
       <Modal title="My Cart" open={isModalOpen} onOk={handleOk} okText="Confirm" centered={true} onCancel={handleCancel}>
         {
+          mealOrders.length > 0 ?
           mealOrders?.map((meal, key) => (
             <p key={key}>{meal.strMeal}</p>
-          ))
+          )) :
+          <p>Empty cart...</p>
         }
       </Modal>
     </>
